@@ -32,16 +32,16 @@
      {% if post.previous.url %}
 	 <div id='{{post.url}}' class='clide'>
 	   {{post.content}}
-	   <a class="prev" href="/#{{post.previous.url}}">&laquo; prev</a>
+	   <a class="prev" href="#{{post.previous.url}}">&laquo; prev</a>
 	 {% if post.next.url %}
-	     <a class="next" href="/#{{post.next.url}}">&raquo; next</a>
+	     <a class="next" href="#{{post.next.url}}">&raquo; next</a>
 	 {% endif %}
 	 </div>
      {% else %}
 	 <div id='{{post.url}}' class='clide'>
 	 {{post.content}}
 	 {% if post.next.url %}
-	     <a class="next" href="/#{{post.next.url}}">&raquo; next</a>
+	     <a class="next" href="#{{post.next.url}}">&raquo; next</a>
 	 {% endif %}
 	 </div>
      {% endif %}

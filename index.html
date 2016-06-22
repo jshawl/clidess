@@ -1,0 +1,51 @@
+---
+---
+
+<style>
+  .clide {
+     position:absolute;
+     top:0;
+     left:0;
+     width:100%;
+     height:100%;
+     background: #fff;
+     z-index:1;
+   }
+  .clide:target{
+    z-index:2;
+  }
+  .prev, .next{
+    position:absolute;
+    bottom:1em;
+  }
+  .prev{
+    left: 1em;
+  }
+  .next{
+    right: 1em; 
+  }
+</style>
+
+  {% for post in site.posts %}
+
+
+     {% if post.previous.url %}
+	 <div id='{{post.url}}' class='clide'>
+	   {{post.content}}
+	   <a class="prev" href="/#{{post.previous.url}}">&laquo; prev</a>
+	 {% if post.next.url %}
+	     <a class="next" href="/#{{post.next.url}}">&raquo; next</a>
+	 {% endif %}
+	 </div>
+     {% else %}
+	 <div id='{{post.url}}' class='clide'>
+	 {{post.content}}
+	 {% if post.next.url %}
+	     <a class="next" href="/#{{post.next.url}}">&raquo; next</a>
+	 {% endif %}
+	 </div>
+     {% endif %}
+     <hr>
+
+
+  {% endfor %}
